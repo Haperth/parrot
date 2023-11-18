@@ -1,0 +1,33 @@
+pip install --upgrade pip
+
+VOSK
+====
+
+pip3 install vosk
+git clone https://github.com/alphacep/vosk-api
+pip install sounddevice
+sudo apt-get install libportaudio
+
+Mimic3
+======
+
+sudo apt-get install libespeak-ng1
+sudo apt-get install libatomic1 libgomp1 libatlas-base-dev
+
+pip install mycroft-plugin-tts-mimic3
+
+pip install -U typing_extensions
+
+sudo pip install --upgrade ParamSpec
+
+#Run speech to text server with command
+mimic3-server
+# server needs to be running for parrot to speak
+
+# to test speech gen on command line do:
+mimic3 --remote --length-scale 1 --voice 'en_UK/apope_low' "Hello Robert. That's a funny name. My name is Polly. Pieces of eight. Pieces of eight. Ooh! What's that shiny thing."
+
+To get pitch shifted parrot need to change sample rate line in
+/home/pi/.local/share/mycroft/mimic3/voices/en_UK/apope_low/config.json
+
+"sample_rate": 34050,
